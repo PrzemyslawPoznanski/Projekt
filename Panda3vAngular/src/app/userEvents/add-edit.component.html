@@ -1,0 +1,43 @@
+﻿<div class = "container">
+<h1 *ngIf="isAddMode">Event form</h1>
+<h1 *ngIf="!isAddMode">Edit event</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="form-group col-5">
+            <label>Band name</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">Artist name is required</div>
+            </div>
+        </div>
+        <div class="form-group col-5">
+            <label>Status</label>
+            <select formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
+                <option value=""></option>
+                <option value="Not yet accepted">Not yet accepted</option>
+                <option *ngIf="!isAddMode" value="Accepted">Accepted</option>
+            </select>
+            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                <div *ngIf="f.role.errors.required">Status is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        
+        <div class="form-group col">
+            <label>Contact info</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Contact info is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+        <a routerLink="/events" class="btn btn-link">Cancel</a>
+    </div>
+</form>
+</div>
