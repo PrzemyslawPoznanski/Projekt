@@ -6,3 +6,5 @@ Celem projektu było przy użyciu Angular'a i React'a wykonanie dwóch bliźniac
 Aby uruchomić:
 npm install
 npm start
+
+Pierwszy stworzony użytkownik posiada dodatkowe uprawnieni (Admin), każdy koleny stworzony w procesie rejestracji użytkownik (User) posiada mniejsze uprawnienia.
