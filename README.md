@@ -8,3 +8,4 @@ npm install
 npm start
 
 Pierwszy stworzony użytkownik posiada dodatkowe uprawnienia (Admin), każdy koleny stworzony w procesie rejestracji użytkownik (User) posiada mniejsze uprawnienia.
+Kolejnych adminów może dodać tylko admin w panelu zarządzania użytkownikami.
